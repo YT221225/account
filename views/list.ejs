@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list</title>
+    <link rel="stylesheet" href="/bootstrap-5.3.0-dist/css/bootstrap.min.css">
+    <script src="/bootstrap-5.3.0-dist/js/bootstrap.bundle.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        .card{
+            width: 50%;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+
+<body background="/images/极光.jpg">
+    <!-- 页头 -->
+    <div>
+      <form method="post" action="/logout">
+        <button type="submit" class="btn btn-outline-danger" style="float: right;margin-top: 7px;">quit</button>
+      </form>
+      <h1>记账本<button type="button" class="btn btn-outline-secondary" 
+        style="margin-left: 100px;">
+        <a href="/account/create"
+        style="text-decoration: none; color: #000;" >添加账单</a></button></h1>
+    </div>
+
+    <hr>
+    <!-- 卡槽 -->
+    <% accounts.forEach(item => { %>
+      <div class="<%= item.type == 1 ?'card text-bg-success mb-3':'card text-bg-warning mb-3'; %>">
+        <div class="card-header">
+          <%= moment(item.time).format('YYYY-MM-DD') %>------------事项——<%= item.title %>
+          <span style="float: left;"><%= item.type == 1 ? '收入':'支出'; %></span>
+          <a class="delBtn" href="/account/<%= item._id %>" >
+            <svg width="20" height="20" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16" style="float: right;">
+              <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+            </svg>
+          </a>
+        </div>
+          <blockquote class="blockquote mb-0">
+            <p>金额流水:<%= item.account %></p>
+            <footer class="blockquote-footer" style="float: right;">事情明细:<%= item.remarks %></footer>
+          </blockquote>
+        </div>
+      </div>
+      <br>
+      <br>
+     <% }) %>
+
+
+</body>
+    <script>
+      let delBtns = document.querySelectorAll('.delBtn');
+
+      //绑定事件
+      delBtns.forEach(item => {
+        item.addEventListener('click',function(e){
+          if(confirm('你确定删除此账单吗？')){
+            return true;
+          }else{
+            //阻止默认行为
+            e.preventDefault();
+          }
+        })
+      })
+    </script>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create</title>
+    <link rel="stylesheet" href="/bootstrap-5.3.0-dist/css/bootstrap.min.css">
+    <style>
+        #bodyDiv{
+            width: 800px;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body background="/images/极光.jpg">
+    <div>
+        <form method="post" action="/logout">
+            <button type="submit" class="btn btn-outline-danger" style="float: right;margin-top: 7px;">quit</button>
+        </form>
+        <h1 style="text-align: center;">添加记录</h1>
+    </div>
+    <hr>
+    <div id="bodyDiv">
+        <form action="/account" method="post">
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">事项</span>
+                <input
+                name="title"
+                type="text" 
+                class="form-control"  
+                aria-label="Username" 
+                aria-describedby="addon-wrapping">
+            </div>
+            <br>
+            <br>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">发生时间</span>
+                <input 
+                name="time"
+                type="date"
+                class="form-control" 
+                aria-describedby="addon-wrapping">
+            </div>
+            <br>
+            <br>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">类型</span>
+                <select 
+                name="type"
+                class="form-control" 
+                aria-describedby="addon-wrapping" >
+                    <option value="1">收入</option>
+                    <option value="-1">支出</option>
+                </select>
+            </div>
+            <br>
+            <br>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">金额</span>
+                <input 
+                name="account"
+                type="text" 
+                class="form-control" 
+                aria-label="Username" 
+                aria-describedby="addon-wrapping">
+            </div>
+            <br>
+            <br>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">备注</span>
+                <input 
+                name="remarks"
+                type="text" 
+                class="form-control" 
+                aria-label="Username" 
+                aria-describedby="addon-wrapping">
+            </div>
+
+            <br>
+
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="submit">提交</button>
+            </div>
+
+        </form>
+        
+    </div>
+    
+
+
+
+    <script src="/bootstrap-5.3.0-dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

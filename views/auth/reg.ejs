@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap-5.3.0-dist/css/bootstrap.min.css">
+    <script src="/bootstrap-5.3.0-dist/js/bootstrap.bundle.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: auto;
+ 
+        } 
+        input{
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body background="/images/极光.jpg">
+    <div>
+    <form method="post" action="/logout">
+        <button type="submit" class="btn btn-outline-danger" style="float: right;margin-top: 7px;">quit</button>
+    </form>
+    <h1>注册</h1>
+    </div>
+    <hr>
+    <div style="width: 500px;height: 360px;margin-top: 70px;" >
+        <h2 style="text-align: center;">Welcome enroll！</h2>
+        <form action="/reg" method="post">
+            <div class="mb-3">
+              <!-- 账号 -->
+                <label for="formGroupExampleInput" class="form-label">user</label>
+                <input name="username" 
+                type="text" 
+                class="form-control" 
+                id="formGroupExampleInput" 
+                placeholder="Please enter your user">
+              </div1>
+              <!-- 密码 -->
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">password</label>
+                <input name="password" 
+                type="password" 
+                class="form-control" 
+                id="formGroupExampleInput2" 
+                placeholder="Please enter your password">
+            </div>
+            <div style="text-align: center;margin-top: 30px;">
+                <button type="submit" class="btn btn-primary btn-lg">e n r o l l</button>
+            </div>
+        </form>
+        
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/bootstrap-5.3.0-dist/css/bootstrap.min.css">
+    <script src="/bootstrap-5.3.0-dist/js/bootstrap.bundle.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        a {
+            text-decoration: none; /* 去除默认的下划线 */
+            outline: none;	/* 去除旧版浏览器的点击后的外虚线框 */
+            color: #000;	/* 去除默认的颜色和点击后变化的颜色 */ 
+          }
+
+    </style>
+  </head>
+  <body background="/images/极光.jpg">
+    <h1><%= title %></h1>
+    <p>
+      <h1>记事本程序</h1>
+      <br>
+      <br>
+      <button type="button" class="btn btn-light"><a href="/account/create">Add a list</a></button>
+      <button type="button" class="btn btn-light"><a href="/account">List information</a></button>
+    </p>
+      <div style="margin-top: 50px;">
+        <button class="btn btn-primary" type="button"><a href="/login">Click Sign in</a></button>
+      </div>
+  </body>
+</html>
