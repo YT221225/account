@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "run": "node ./bin/www"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
